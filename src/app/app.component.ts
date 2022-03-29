@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AngularApp1';
+  status = true;
+  changeStatus() {
+    this.status = !this.status
+  }
+  obj: any = [
+    {
+      name: "Aakass",
+      age: 22,
+      gender: "Male"
+    },
+    {
+      name: "Abi",
+      age: 21,
+      gender: "Male"
+    }
+  ]
 }
