@@ -1,0 +1,34 @@
+<div style="border-radius: 10px;color: burlywood;margin-top: 5%;">
+    <h2>Add Product</h2>
+    <form #productForm="ngForm">
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label" for="lbltitle">Title</label>
+            <input id="lbltitle" class="form-control" name="lbltitle" #title="ngModel" [(ngModel)]="product.title"
+                required>
+        </div>
+        <span class="text-danger" *ngIf="title.invalid && (title.touched || title.dirty)">
+            Required
+        </span>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label" for="lbldescription">Description</label>
+            <input id="lbldescription" class="form-control" name="lbldescription" #description="ngModel"
+                [(ngModel)]="product.description" required>
+        </div>
+        <span class="text-danger" *ngIf="description.invalid && (description.touched || description.dirty)">
+            Required
+        </span>
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label" for="lblprice">Price</label>
+            <input id="lblprice" type="number" class="form-control" name="lblprice" #price="ngModel" [(ngModel)]="product.price"
+                required>
+        </div>
+        <span class="text-danger" *ngIf="price.invalid && (price.touched || price.dirty)">
+            <span class="text-danger" *ngIf="price.errors?.required && (price.touched || price.dirty)">required</span>
+            
+        </span>
+        <div>
+            <button (click)="submit()" [disabled]="productForm.invalid"
+                class="btn btn-primary mt-3 float-left">Submit</button>
+        </div>
+    </form>
+</div>

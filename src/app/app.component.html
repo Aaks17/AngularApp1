@@ -5,22 +5,20 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="home" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="aboutus" routerLinkActive="active" [routerLink]="['/aboutus']">About Us</a>
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['/users']">Users</a>
       </li>
-      
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="aboutus" routerLinkActive="active" [routerLink]="['/aboutus']">About Us</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link" href="aboutus" routerLinkActive="active" [routerLink]="['/products']">Products</a>
+      </li>
     </ul>
   </div>
 </nav>
-<div class="container text-center">
+<div class="container">
   <router-outlet></router-outlet>
 </div>
-<button  (click)="changeStatus()">click to enable or disable</button>
-<button [attr.disabled]="status?true:null">sample button</button>
-<ul *ngFor="let person of obj">
-  <li>{{person.name}}</li>
-  <li>{{person.age}}</li>
-  <li>{{person.gender}}</li>
-</ul>
